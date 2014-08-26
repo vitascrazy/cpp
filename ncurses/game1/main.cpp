@@ -48,7 +48,7 @@ int main()
 
 		for (int y=0; y<10; y++)
 		{
-			printw("%c", Map[y]);
+			printw("%s\n", Map[y]);
 		}
 
 		refresh();
