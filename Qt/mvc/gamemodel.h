@@ -1,7 +1,9 @@
 #ifndef GAMEMODEL_H
 #define GAMEMODEL_H
 
-class GameModel
+#include "subject.h"
+
+class GameModel : public Subject
 {
 public:
     enum SYMBOLS {
@@ -28,6 +30,7 @@ public:
 private:
     SYMBOLS area[9] {SYMBOL_NONE};
     SYMBOLS symbolPlayer;
+    SCREENS scene;
 
     RESULT checkOutVictory();
 public:
@@ -35,6 +38,7 @@ public:
     void resetGame();
     void setSymbolPlayer(SYMBOLS symbol);
     void movePlayer(int pos);
+    void setScene(SCREENS scene = SCREEN_SPLASH);
     void setModeScreen(SCREENS screen);
     SCREENS getModeScreen();
 };
